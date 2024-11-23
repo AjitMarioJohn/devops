@@ -1,0 +1,48 @@
+apiVersion: v1 #version of kubernetes api we are using
+kind: Pod # type of object we are trying to create
+metadata: 
+  name: myapp-pod
+  labels:
+    app: myapp
+    tier: front-end # label can have custom properties
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+
+
+
+#  commands
+
+# create POD
+# kubectl create -f pod-definition.yml
+# kubectl apply -f pod-definition.yml
+# kubectl run <pod-name> --image=<name>
+
+# get list of all available pods that are running
+#  kubectl get pods  
+#  kubectl get pods  -o wide
+
+#  list replicaset
+#  kubetcl get replicaset
+#  kubectl get rs
+
+#  listg node
+# kubectl get nodes
+
+
+#  get description of pods
+#  kubectl describe pod myapp-pod
+
+
+#  delete POD
+# kubectl delete -f pod-definition.yml
+
+#  edit replica set
+# kubectl edit replicaset <replica-name>
+
+# scale replicas
+# kubectl scale replicaset <replica-name> --replicas=<num-to-scale>
+
+# create basic yaml file
+# kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml
