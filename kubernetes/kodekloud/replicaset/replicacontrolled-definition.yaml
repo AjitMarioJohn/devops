@@ -1,0 +1,20 @@
+# This is deprecated using replicaset instead
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myapp-replica-set
+  labels:
+    app: myapp
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: myapp-prod
+      labels:
+        app: myapp
+        type: frontend
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+  replicas: 3

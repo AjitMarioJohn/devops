@@ -1,0 +1,12 @@
+apiVersion: v1 #version of kubernetes api we are using
+kind: Pod # type of object we are trying to create
+metadata: 
+  name: myapp-pod
+  labels:
+    app: myapp
+    tier: front-end # label can have custom properties
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+
